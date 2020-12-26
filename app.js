@@ -5,9 +5,20 @@ var items = [ {
 }, {
   name: '消しゴム', price: 500, quantity: 0
 } ]
+
 var vm = new Vue({
   el: '#app',
   data: { // dataプロパティ
-         items: items
-       }
+    items: items
+  },
+  computed: {
+    totalPrice: function(){
+      return this.items.reduce(function(sum, item){
+        return sum + (item.price * item.quantity)
+      }, 0)
+    },
+    totalPriceWithTax: function(){
+      return Math.floor(this.totalPrice * 1.08)
+    }
+  }
 })
