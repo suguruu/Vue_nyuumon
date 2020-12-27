@@ -1,0 +1,9 @@
+<script src="https://unpkg.com/vue@2.5.17"></script>
+
+<div id="fruits-component">
+  <ol>
+    <fruits-item-name v-for="fruit in fruitsItems" :key="fruit.name" :fruits-item="fruit"></fruits-item-name>
+  </ol>
+</div>
+
+<script src="fruits-component.js"></script>

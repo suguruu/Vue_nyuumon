@@ -1,4 +1,4 @@
-var counterButton = vue.extend({
+var counterButton = Vue.extend({
   template: '<span>{{counter}} items<button v-on:click="addToCart">add</button>',
   data: function() {
     return {
@@ -13,7 +13,7 @@ var counterButton = vue.extend({
   },
 })
 
-new Vue({
+var vm = new Vue({
   el: '#fruits-counter',
   components: {
     'counter-button': counterButton
